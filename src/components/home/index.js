@@ -25,7 +25,7 @@ const Home = () => {
     return () => {isMounted = false;}
   }, []);
   const createTuit = () =>
-      service.createTuit(userId, {tuit})
+      service.createTuit(userId, {_tuit: tuit, _postedBy: userId})
           .then(findTuits)
   const deleteTuit = (tid) =>
       service.deleteTuit(tid)
