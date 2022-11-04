@@ -23,7 +23,7 @@ const Home = () => {
     let isMounted = true;
     findTuits()
     return () => {isMounted = false;}
-  }, []);
+  }, [])
   const createTuit = () =>
       service.createTuit(userId, {_tuit: tuit, _postedBy: userId})
           .then(findTuits)
