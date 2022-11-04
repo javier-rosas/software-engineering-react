@@ -1,5 +1,6 @@
 import axios from "axios";
-const BASE_URL = "http://localhost:4000";
+const BASE_URL_AWS = "http://software-engineering-node.eba-73dmnipy.us-east-1.elasticbeanstalk.com"
+const BASE_URL = "http://localhost:4000"
 // const BASE_URL = "https://software-engineering-node-fa22.herokuapp.com/api";
 // const BASE_URL = "http://localhost:4000/api";
 
@@ -23,7 +24,7 @@ export const deleteUser = (uid) =>
     .then(response => response.data);
 
 export const deleteUsersByUsername = (username) =>
-  axios.delete(`${USERS_API}/username/${username}/delete`)
+  axios.get(`${USERS_API}/username/${username}/delete`)
     .then(response => response.data);
 
 export const findUserByCredentials = (credentials) =>

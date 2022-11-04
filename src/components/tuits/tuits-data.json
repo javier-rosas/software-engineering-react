@@ -1,32 +1,32 @@
 [
   {
     "_id": "123",
-    "postedBy": {"username": "NASA"},
-    "tuit": "In 2021, our @NASAPersevere Mars rover landed and our Ingenuity helicopter took flight. Two asteroid missions launched to the skies, and another began its journey home to Earth. A look back at highlights for our #NASAScience planetary missions: https://go.nasa.gov/32zX2fE",
-    "image": "perseverance.jpg",
-    "youtube": null,
-    "avatarLogo": "nasa-logo.jpg",
-    "published": "Dec 25, 2021",
-    "imageOverlay": null,
-    "stats": {
-      "replies": 123,
-      "retuits": 234,
-      "likes": 345
+    "_postedBy": {"username": "NASA"},
+    "_tuit": "In 2021, our @NASAPersevere Mars rover landed and our Ingenuity helicopter took flight. Two asteroid missions launched to the skies, and another began its journey home to Earth. A look back at highlights for our #NASAScience planetary missions: https://go.nasa.gov/32zX2fE",
+    "_image": "perseverance.jpg",
+    "_youtube": null,
+    "_avatarLogo": "nasa-logo.jpg",
+    "_published": "Dec 25, 2021",
+    "_imageOverlay": null,
+    "_stats": {
+      "_replies": 123,
+      "_etuits": 234,
+      "_likes": 345
     }
   },
   {
     "_id": "234",
-    "postedBy": {"username": "NASA"},
-    "tuit": "In 2021, our @NASAPersevere Mars rover landed and our Ingenuity helicopter took flight. Two asteroid missions launched to the skies, and another began its journey home to Earth. A look back at highlights for our #NASAScience planetary missions: https://go.nasa.gov/32zX2fE",
-    "image": "perseverance.jpg",
-    "youtube": null,
-    "avatarLogo": "nasa-logo.jpg",
-    "published": "Dec 25, 2021",
-    "imageOverlay": "Perseverance on Mars",
-    "stats": {
-      "replies": 123,
-      "retuits": 234,
-      "likes": 345
+    "_postedBy": {"username": "NASA"},
+    "_tuit": "In 2021, our @NASAPersevere Mars rover landed and our Ingenuity helicopter took flight. Two asteroid missions launched to the skies, and another began its journey home to Earth. A look back at highlights for our #NASAScience planetary missions: https://go.nasa.gov/32zX2fE",
+    "_image": "perseverance.jpg",
+    "_youtube": null,
+    "_avatarLogo": "nasa-logo.jpg",
+    "_published": "Dec 25, 2021",
+    "_imageOverlay": "Perseverance on Mars",
+    "_stats": {
+      "_replies": 123,
+      "_retuits": 234,
+      "_likes": 345
     }
   },
   {

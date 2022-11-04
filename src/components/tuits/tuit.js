@@ -4,12 +4,13 @@ import TuitImage from "./tuit-image";
 import TuitVideo from "./tuit-video";
 
 const Tuit = ({tuit, deleteTuit}) => {
+
   return(
     <li className="p-2 ttr-tuit list-group-item d-flex rounded-0">
       <div className="pe-2">
         {
-          tuit?._postedBy &&
-          <img src={`../images/${tuit?._postedBy?._username}.jpg`}
+          tuit._postedBy &&
+          <img src={`../images/${tuit._postedBy?._username}.jpg`}
                className="ttr-tuit-avatar-logo rounded-circle"/>
         }
       </div>
@@ -17,16 +18,16 @@ const Tuit = ({tuit, deleteTuit}) => {
           <i onClick={() => deleteTuit(tuit._id)} className="fas fa-remove fa-2x fa-pull-right"></i>
         <h2
           className="fs-5">
-          {tuit?._postedBy && tuit?._postedBy?._username}
-          @{tuit?._postedBy && tuit?._postedBy?._username} -
-          {tuit.published}</h2>
-        {tuit?._tuit}
+          {tuit._postedBy && tuit._postedBy?._username}
+          @{tuit._postedBy && tuit._postedBy?._username} -
+          {tuit._published}</h2>
+        {tuit._tuit}
         {
-          tuit.youtube &&
+          tuit._youtube &&
             <TuitVideo tuit={tuit}/>
         }
         {
-          tuit.image &&
+          tuit._image &&
           <TuitImage tuit={tuit}/>
         }
         <TuitStats tuit={tuit}/>
