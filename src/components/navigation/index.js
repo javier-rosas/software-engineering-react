@@ -5,6 +5,10 @@ import {useLocation, Link} from "react-router-dom";
 function Navigation() {
   const {pathname} = useLocation();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  // console.log(location.pathname);
+>>>>>>> a3
 =======
   // console.log(location.pathname);
 >>>>>>> a3
@@ -17,6 +21,7 @@ function Navigation() {
     {label: 'Bookmarks', icon: 'fa-bookmark', path: '/bookmarks'},
     {label: 'Lists', icon: 'fa-list', path: '/lists'},
     {label: 'Profile', icon: 'fa-user', path: '/profile'},
+<<<<<<< HEAD
 <<<<<<< HEAD
     {label: 'More', icon: 'fa-circle-ellipsis', path: '/more'},
   ]
@@ -41,6 +46,8 @@ function Navigation() {
      <a href="#" className="mt-3 btn btn-lg btn-primary rounded-pill w-100 fw-bold text-white">
       Tuit</a>
 =======
+=======
+>>>>>>> a3
     {label: 'Movies', icon: 'fa-user', path: '/movies'},
     {label: 'More', icon: 'fa-circle-ellipsis', path: '/more'},
     {label: 'Login', icon: 'fa-user', path: '/login'},
@@ -65,6 +72,9 @@ function Navigation() {
       </div>
       <a href="#" className="mt-3 btn btn-lg btn-primary rounded-pill w-100 fw-bold text-white">
         Tuit</a>
+<<<<<<< HEAD
+>>>>>>> a3
+=======
 >>>>>>> a3
     </div>
   );

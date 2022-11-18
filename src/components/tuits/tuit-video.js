@@ -5,7 +5,11 @@ const TuitVideo = ({tuit}) => {
       className="ttr-responsive-video ttr-rounded-15px position-relative overflow-hidden w-100 mt-2">
       <iframe width="560"
 <<<<<<< HEAD
+<<<<<<< HEAD
               height="315" src={tuit.youtube}
+=======
+              height="315" src={tuit._youtube}
+>>>>>>> a3
 =======
               height="315" src={tuit._youtube}
 >>>>>>> a3

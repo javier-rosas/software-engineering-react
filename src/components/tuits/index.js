@@ -2,6 +2,7 @@ import React from "react";
 import './tuits.css';
 import Tuit from "./tuit";
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Tuits = ({tuits = []}) => {
     return (
         <div>
@@ -15,6 +16,8 @@ const Tuits = ({tuits = []}) => {
         </div>
       );
 =======
+=======
+>>>>>>> a3
 
 function Tuits({tuits = [], deleteTuit}) {
     return (
@@ -30,6 +33,9 @@ function Tuits({tuits = [], deleteTuit}) {
       </ul>
     </div>
   );
+<<<<<<< HEAD
+>>>>>>> a3
+=======
 >>>>>>> a3
 }
 

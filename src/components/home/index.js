@@ -1,10 +1,13 @@
 import React from "react";
 import Tuits from "../tuits";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import tuitsArray from "../tuits/tuits-data.json"
 
 const Home = () => {
 =======
+=======
+>>>>>>> a3
 import * as service from "../../services/tuits-service";
 import {useEffect, useState} from "react";
 import {useLocation, useParams} from "react-router-dom";
@@ -40,11 +43,15 @@ const Home = () => {
       service.deleteTuit(tid)
           .then(findTuits())
 
+<<<<<<< HEAD
+>>>>>>> a3
+=======
 >>>>>>> a3
   return(
     <div className="ttr-home">
       <div className="border border-bottom-0">
         <h4 className="fw-bold p-2">Home Screen</h4>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div className="d-flex">
           <div className="p-2">
@@ -76,6 +83,8 @@ const Home = () => {
       </div>
       <Tuits tuits={tuitsArray}/>
 =======
+=======
+>>>>>>> a3
         {
           uid &&
           <div className="d-flex">
@@ -111,6 +120,9 @@ const Home = () => {
         }
       </div>
       <Tuits tuits={tuits} deleteTuit={deleteTuit}/>
+<<<<<<< HEAD
+>>>>>>> a3
+=======
 >>>>>>> a3
     </div>
   );

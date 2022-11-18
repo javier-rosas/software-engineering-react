@@ -3,6 +3,7 @@ import TuitStats from "./tuit-stats";
 import TuitImage from "./tuit-image";
 import TuitVideo from "./tuit-video";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {useNavigate, Link} from "react-router-dom";
 
 const Tuit = ({tuit, likeTuit}) => {
@@ -36,6 +37,8 @@ const Tuit = ({tuit, likeTuit}) => {
           tuit.postedBy &&
           <img src={`../images/${tuit.postedBy.username}.jpg`}
 =======
+=======
+>>>>>>> a3
 
 const Tuit = ({tuit, deleteTuit}) => {
 
@@ -45,11 +48,15 @@ const Tuit = ({tuit, deleteTuit}) => {
         {
           tuit._postedBy &&
           <img src={`../images/${tuit._postedBy?._username}.jpg`}
+<<<<<<< HEAD
+>>>>>>> a3
+=======
 >>>>>>> a3
                className="ttr-tuit-avatar-logo rounded-circle"/>
         }
       </div>
       <div className="w-100">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <h2
           className="fs-5">
@@ -67,6 +74,8 @@ const Tuit = ({tuit, deleteTuit}) => {
         }
         <TuitStats tuit={tuit} likeTuit={likeTuit}/>
 =======
+=======
+>>>>>>> a3
           <i onClick={() => deleteTuit(tuit._id)} className="fas fa-remove fa-2x fa-pull-right"></i>
         <h2
           className="fs-5">
@@ -83,6 +92,9 @@ const Tuit = ({tuit, deleteTuit}) => {
           <TuitImage tuit={tuit}/>
         }
         <TuitStats tuit={tuit}/>
+<<<<<<< HEAD
+>>>>>>> a3
+=======
 >>>>>>> a3
       </div>
     </li>

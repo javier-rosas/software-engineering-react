@@ -2,6 +2,7 @@
   {
     "_id": "123",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "postedBy": {"username": "NASA"},
     "tuit": "In 2021, our @NASAPersevere Mars rover landed and our Ingenuity helicopter took flight. Two asteroid missions launched to the skies, and another began its journey home to Earth. A look back at highlights for our #NASAScience planetary missions: https://go.nasa.gov/32zX2fE",
     "image": "perseverance.jpg",
@@ -14,6 +15,8 @@
       "retuits": 234,
       "likes": 345
 =======
+=======
+>>>>>>> a3
     "_postedBy": {"username": "NASA"},
     "_tuit": "In 2021, our @NASAPersevere Mars rover landed and our Ingenuity helicopter took flight. Two asteroid missions launched to the skies, and another began its journey home to Earth. A look back at highlights for our #NASAScience planetary missions: https://go.nasa.gov/32zX2fE",
     "_image": "perseverance.jpg",
@@ -25,11 +28,15 @@
       "_replies": 123,
       "_etuits": 234,
       "_likes": 345
+<<<<<<< HEAD
+>>>>>>> a3
+=======
 >>>>>>> a3
     }
   },
   {
     "_id": "234",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "postedBy": {"username": "NASA"},
     "tuit": "In 2021, our @NASAPersevere Mars rover landed and our Ingenuity helicopter took flight. Two asteroid missions launched to the skies, and another began its journey home to Earth. A look back at highlights for our #NASAScience planetary missions: https://go.nasa.gov/32zX2fE",
@@ -43,6 +50,8 @@
       "retuits": 234,
       "likes": 345
 =======
+=======
+>>>>>>> a3
     "_postedBy": {"username": "NASA"},
     "_tuit": "In 2021, our @NASAPersevere Mars rover landed and our Ingenuity helicopter took flight. Two asteroid missions launched to the skies, and another began its journey home to Earth. A look back at highlights for our #NASAScience planetary missions: https://go.nasa.gov/32zX2fE",
     "_image": "perseverance.jpg",
@@ -54,6 +63,9 @@
       "_replies": 123,
       "_retuits": 234,
       "_likes": 345
+<<<<<<< HEAD
+>>>>>>> a3
+=======
 >>>>>>> a3
     }
   },

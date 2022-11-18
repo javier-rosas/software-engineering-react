@@ -17,7 +17,10 @@
 # misc
 .DS_Store
 <<<<<<< HEAD
+<<<<<<< HEAD
 .env
+=======
+>>>>>>> a3
 =======
 >>>>>>> a3
 .env.local
