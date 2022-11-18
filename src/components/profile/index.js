@@ -1,4 +1,12 @@
 import React from "react";
+<<<<<<< HEAD
+<<<<<<< HEAD
+const Profile = () => {
+  return(
+    <h1>Profile</h1>
+=======
+=======
+>>>>>>> a3
 import Tuits from "../tuits";
 import {Link} from "react-router-dom";
 
@@ -69,6 +77,10 @@ const Profile = () => {
       </div>
       <Tuits/>
     </div>
+<<<<<<< HEAD
+>>>>>>> a3
+=======
+>>>>>>> a3
   );
 }
 export default Profile;
