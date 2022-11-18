@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "software-engineering-react",
+=======
+  "name": "full-stack-developer-web",
+>>>>>>> a3
   "version": "0.1.0",
   "private": true,
   "dependencies": {
