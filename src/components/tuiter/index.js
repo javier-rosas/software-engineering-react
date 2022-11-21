@@ -43,7 +43,7 @@ function Tuiter () {
               <Route path="/movies" element={<Movies/>}/>
               <Route path="/movies/:imdbID" element={<MovieDetails/>}/>
               <Route path="/more" element={<More/>}/>
-              <Route path="/mytuits" element={<MyTuits/>} />
+              <Route path="/profile/mytuits" element={<MyTuits/>} />
               {/** <Route path="/mylikes" element={<MyLikes/>}/>*/}
             </Routes>
           </div>
