@@ -4,6 +4,7 @@ import { useState } from 'react'
 const TuitStats = ({tuit, likeTuit}) => {
 
   const [isLiked, setIsLiked] = useState(false)
+  const [localLikes, setLocalLikes] = useState(tuit?._stats?._likes ?? 0)
 
   return (
     <div className="row">
@@ -24,6 +25,7 @@ const TuitStats = ({tuit, likeTuit}) => {
         <span onClick={() => {
           likeTuit(tuit)
           setIsLiked(!isLiked)
+          setLocalLikes(localLikes + 1)
           }}>
         {
           (tuit._stats._likes > 0 || isLiked) ?
@@ -35,7 +37,8 @@ const TuitStats = ({tuit, likeTuit}) => {
           // (tuit._stats._likes <= 0 ) &&
           <i className="far fa-heart"></i>
         }
-        {tuit._stats && tuit._stats._likes}
+        {localLikes}
+        {/* {tuit._stats && tuit._stats._likes} */}
         </span>
       </div>
     </div>
