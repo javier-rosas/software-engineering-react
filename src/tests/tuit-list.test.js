@@ -6,9 +6,8 @@ import axios from "axios";
 import {deleteTuit} from '../services/tuits-service'
 
 
-const MOCKED_TUITS = [{ _tuit: "alice's tuit", _postedBy: '636490116cc0ec884dc608ac' }, 
-                      { _tuit: "bob's tuit", _postedBy: '636490216cc0ec884dc608ae' }, 
-                      {_tuit: "charlie's tuit", _postedBy: '636490216cc0ec884dc608ae'}];
+const MOCKED_TUITS = [{ _tuit: "a's tuit", _postedBy: '637aec1fedd22bccce35919a' }, 
+                      { _tuit: "b's tuit", _postedBy: '637af4111b15171c85b10d2d' }];
 
 // const MOCKED_TUITS = ['fwqrqwef', 'qwefqwfe']
 test('tuit list renders static tuit array', () => {
@@ -18,12 +17,10 @@ test('tuit list renders static tuit array', () => {
       <Tuits tuits={MOCKED_TUITS} />
     </HashRouter>
     );
-  const linkElement2 = screen.getByText(/alice's tuit/i);
-  const linkElement3 = screen.getByText(/charlie's tuit/i);
-  const linkElement4 = screen.getByText(/bob's tuit/i);
+  const linkElement2 = screen.getByText(/a's tuit/i);
+  const linkElement3 = screen.getByText(/b's tuit/i);
   expect(linkElement2).toBeInTheDocument();
   expect(linkElement3).toBeInTheDocument();
-  expect(linkElement4).toBeInTheDocument();
 });
 
 test('tuit list renders async', async () => {
@@ -34,7 +31,7 @@ test('tuit list renders async', async () => {
     <HashRouter>
       <Tuits tuits={tuits}/>
     </HashRouter>);
-    const linkElement2 = screen.getByText(/Hello/i);
+    const linkElement2 = screen.getByText(/a's tuit/i);
     expect(linkElement2).toBeInTheDocument();
 })
 
@@ -56,11 +53,9 @@ test('tuit list renders mocked', async () => {
         <Tuits tuits={tuits}/>
       </HashRouter>);
   
-  const linkElement2 = screen.getByText(/alice's tuit/i);
-  const linkElement3 = screen.getByText(/charlie's tuit/i);
-  const linkElement4 = screen.getByText(/bob's tuit/i);
+  const linkElement2 = screen.getByText(/a's tuit/i);
+  const linkElement3 = screen.getByText(/b's tuit/i);
   expect(linkElement2).toBeInTheDocument();
   expect(linkElement3).toBeInTheDocument();
-  expect(linkElement4).toBeInTheDocument();
 
 });
