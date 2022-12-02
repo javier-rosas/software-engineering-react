@@ -1,16 +1,18 @@
-import {
-  userTogglesTuitDislikes
-} from "../services/dislikes-service";
+/**
+ * @file implements dislikes-service tests 
+ */
 
-import {
-  userTogglesTuitLikes
-} from '../services/likes-service'
-
+// imports
+import { userTogglesTuitDislikes } from "../services/dislikes-service"
+import { userTogglesTuitLikes } from '../services/likes-service'
 import { createUser, deleteUsersByUsername } from '../services/users-service'
-
 import { createTuit, findTuitById, deleteTuit } from '../services/tuits-service'
 
-
+/**
+ * Tests if a user can dislike a Tuit. There are 2 scenarios: 
+ * 1) If a user has already liked the Tuit, the Tuit likes counter should -=1, and the dislikes counter should += 1
+ * 2) If a user has not liked the Tuit, the Tuit dislikes should += 1
+ */
 describe('test user toggles tuit dislike', () => {
 
   let userId = ''
@@ -58,6 +60,11 @@ describe('test user toggles tuit dislike', () => {
   });
 })
 
+/**
+ * Tests if a user can like a Tuit. There are 2 scenarios: 
+ * 1) If a user has already disliked the Tuit, the Tuit dislikes counter should -=1, and the likes counter should += 1
+ * 2) If a user has not disliked the Tuit, the Tuit likes should += 1
+ */
 describe('test user toggles tuit like', () => {
 
   let userId = ''

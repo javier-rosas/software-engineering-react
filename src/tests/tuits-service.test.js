@@ -1,26 +1,34 @@
+/**
+ * @file implements the tuit-service test 
+ */
+
+// imports 
 import {
   createTuit,
-  deleteTuit, deleteTuitByUserId, findAllTuits,
+  deleteTuit, findAllTuits,
   findTuitById
 } from "../services/tuits-service";
 
+/** 
+ * Tests if a user can create a Tuit through the REST endpoint
+ */
 describe('can create tuit with REST API', () => {
   // sample tuit to insert
   const tuit = {
-    _postedBy: '63648a07ecc60d08fa496a83',
-    _tuit: 'This is curleys Tuit!!!'
+    _postedBy: '637aec1fedd22bccce35919a',
+    _tuit: 'This is a Tuit!!!'
   };
 
   // setup test before running test
   beforeAll(() => {
     // remove any/all tuits to make sure we create it in the test
-    return deleteTuitByUserId(tuit._postedBy);
+    return deleteTuit(tuit._postedBy);
   })
 
   // clean up after test runs
   afterAll(() => {
     // remove any data we created
-    return deleteTuitByUserId(tuit._postedBy);
+    return deleteTuit(tuit._postedBy);
   })
 
   test('can create tuit with REST API', async () => {
@@ -33,12 +41,14 @@ describe('can create tuit with REST API', () => {
   });
 });
 
-
+/** 
+ * Tests if a Tuit can be deleted by Id through the REST endpoint
+ */
 describe('can delete tuit wtih REST API', () => {
   // sample tuit to delete
   const tuit = {
-    _postedBy: '63648a07ecc60d08fa496a83',
-    _tuit: 'This is curleys Tuit!!!'
+    _postedBy: '637aec1fedd22bccce35919a',
+    _tuit: 'This is a Tuit!!!'
   }
 
   // setup the tests before verification
@@ -61,24 +71,26 @@ describe('can delete tuit wtih REST API', () => {
 });
 
 
-
+/** 
+ * Tests if a Tuit can be retrieved by Id using the REST endpoint
+ */
 describe('can retrieve a tuit by their primary key with REST API', () => {
   // sample tuit we want to retrieve
   const tuit = {
-    _postedBy: '63648a07ecc60d08fa496a83',
-    _tuit: 'This is curleys Tuit!!!'
+    _postedBy: '637aec1fedd22bccce35919a',
+    _tuit: 'This is a Tuit!!!'
   }
 
   // setup before running test
   beforeAll(() => {
     // clean up before the test making sure the tuit doesn't already exist
-    return deleteTuitByUserId(tuit._postedBy)
+    return deleteTuit(tuit._postedBy)
   })
 
   // clean up after ourselves
   afterAll(() => {
     // remove any data we inserted
-    return deleteTuitByUserId(tuit._postedBy)
+    return deleteTuit(tuit._postedBy)
   })
 
   test('can retrieve a tuit by their primary key with REST API', async () => {
@@ -96,20 +108,19 @@ describe('can retrieve a tuit by their primary key with REST API', () => {
   })
 })
 
+/** 
+ * Tests all Tuits can be retrieved using the REST endpoint
+ */
 describe('can retrieve all tuits with REST API', () => {
   // sample tuits we'll insert to then retrieve
   const tuits = [
     {
-      _postedBy: '63648a07ecc60d08fa496a83',
-      _tuit: 'This is curleys Tuit!!!'
+      _postedBy: '637aec1fedd22bccce35919a',
+      _tuit: 'This is a Tuit!!!'
     },
     {
-      _postedBy: '636490116cc0ec884dc608ac',
-      _tuit: 'This is javiers Tuit!!!'
-    },
-    {
-      _postedBy: '636490216cc0ec884dc608ae',
-      _tuit: 'This is tostons Tuit!!!'
+      _postedBy: '637aec1fedd22bccce35919a',
+      _tuit: 'This is b Tuit!!!'
     }
   ]
 
@@ -128,7 +139,7 @@ describe('can retrieve all tuits with REST API', () => {
   afterAll(() =>
     // delete the tuits we inserted
     Promise.all(tuits.map((_tuit) =>
-      deleteTuitByUserId(_tuit._postedBy)
+      deleteTuit(_tuit._postedBy)
     )
   ))
 

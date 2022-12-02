@@ -1,9 +1,17 @@
+/**
+ * @file implements user-service tests 
+ */
+
+// imports
 import {
   createUser,
   deleteUsersByUsername, findAllUsers,
   findUserById
 } from "../services/users-service";
 
+/**
+ * Tests if a user can be created using the REST endpoint
+ */
 describe('createUser', () => {
   // sample user to insert
   const ripley = {
@@ -35,6 +43,9 @@ describe('createUser', () => {
   });
 });
 
+/**
+ * Tests if a user can be deleted by username using the REST endpoint
+ */
 describe('deleteUsersByUsername', () => {
 
   // sample user to delete
@@ -65,6 +76,9 @@ describe('deleteUsersByUsername', () => {
   });
 });
 
+/**
+ * Tests if a user can be retrieved by Id using the REST endpoint
+ */
 describe('findUserById',  () => {
   // sample user we want to retrieve
   const adam = {
@@ -104,7 +118,9 @@ describe('findUserById',  () => {
   });
 });
 
-
+/**
+ * Tests if all users can be retrieved using the REST endpoint
+ */
 describe('findAllUsers',  () => {
 
   // sample users we'll insert to then retrieve
