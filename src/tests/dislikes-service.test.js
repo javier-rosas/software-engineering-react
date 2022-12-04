@@ -30,7 +30,6 @@ describe('test user toggles tuit dislike', () => {
     username = user._username
     // insert tuit
     const tuit = await createTuit(
-      userId, 
       {
         _postedBy: userId,
         _tuit: 'This is a Tuit!!!'
@@ -82,7 +81,6 @@ describe('test user toggles tuit like', () => {
     username = user._username
     // insert tuit
     const tuit = await createTuit(
-      userId, 
       {
         _postedBy: userId,
         _tuit: 'This is a Tuit!!!'

@@ -5,7 +5,7 @@
 // imports
 import {
   createUser,
-  deleteUsersByUsername, findAllUsers,
+  deleteTuit, findAllUsers,
   findUserById
 } from "../services/users-service";
 
@@ -23,13 +23,13 @@ describe('createUser', () => {
   // setup test before running test
   beforeAll(() => {
     // remove any/all users to make sure we create it in the test
-    return deleteUsersByUsername(ripley._username);
+    return deleteTuit(ripley._username);
   })
 
   // clean up after test runs
   afterAll(() => {
     // remove any data we created
-    return deleteUsersByUsername(ripley._username)
+    return deleteTuit(ripley._username)
   })
 
   test('can insert new users with REST API', async () => {
@@ -70,7 +70,7 @@ describe('deleteUsersByUsername', () => {
   test('can delete users from REST API by username', async () => {
     // delete a user by their username. Assumes user already exists
     const status = await deleteUsersByUsername(sowell._username);
-
+    console.log("status", status)
     // verify we deleted at least one user by their username
     expect(status.deletedCount).toBeGreaterThanOrEqual(1);
   });
