@@ -1,6 +1,7 @@
 import * as service from "../../services/auth-service"
 import { useNavigate } from "react-router-dom"
 import {useState, useEffect} from 'react'
+import MyLikes from "./my-likes";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -19,6 +20,9 @@ const Profile = () => {
   }
   return(
     <div>
+      <Link to="/profile/mylikes">
+        Likes
+      </Link>
       <h4>{profile._username}</h4>
       <h6>@{profile._username}</h6>
       <button onClick={logout}>

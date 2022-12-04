@@ -20,8 +20,8 @@ export const findTuitByUser = (uid) =>
   api.get(`${USERS_API}/${uid}/tuits`)
     .then(response => response.data);
 
-export const createTuit = (uid, tuit) =>
-  api.post(`${USERS_API}/${uid}/tuits`, tuit)
+export const createTuit = (tuit) =>
+  api.post(`${TUITS_API}`, tuit)
     .then(response => response.data);
 
 export const updateTuit = (tid, tuit) =>
@@ -30,4 +30,8 @@ export const updateTuit = (tid, tuit) =>
 
 export const deleteTuit = (tid) =>
   axios.delete(`${TUITS_API}/${tid}`)
+    .then(response => response.data);
+
+export const deleteTuitByUserId = (uid) =>
+  axios.delete(`${USERS_API}/${uid}/tuits`)
     .then(response => response.data);
