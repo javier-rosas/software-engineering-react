@@ -1,8 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {login} from '../../services/auth-service'
+import { useDispatch } from "react-redux"
+import { signin } from "../../redux/userSlice";
 
 export const UserList = ({users, deleteUser}) => {
+  const dispatch = useDispatch()
+
   return (
     <div className="list-group">
       {
@@ -12,7 +16,10 @@ export const UserList = ({users, deleteUser}) => {
             <Link className="list-group-item"
                   key={user._id}
                   to={`/home/${user._id}`}
-                  onClick={() => login(user)}>
+                  onClick={() => {
+                    login(user)
+                    dispatch(signin(user))
+                    }}>
           <span className="fs-3">
             {user._username}
           </span>

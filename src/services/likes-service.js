@@ -18,4 +18,8 @@ export const userTogglesTuitUnlikes = (uid, tid) =>
 export const findUserLikesTuit = async (uid, tid) => {
   return await api.get(`${USERS_API}/${uid}/likes/${tid}`)
 }
+
+export const findAllTuitsLikedByUser = (userId) =>
+   api.get(`${USERS_API}/${userId}/likes`)
+       .then(response => response.data);
   

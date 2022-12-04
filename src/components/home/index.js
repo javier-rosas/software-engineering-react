@@ -1,38 +1,40 @@
 import React from "react";
 import Tuits from "../tuits";
 import * as service from "../../services/tuits-service";
-import {useEffect, useState} from "react";
-import {useLocation, useParams} from "react-router-dom";
+import { useEffect, useState, useCallback } from "react";
+import { useSelector } from "react-redux"
 
 const Home = () => {
-  const location = useLocation();
-  const {uid} = useParams();
+
+  const user = useSelector((state) => state.userReducer.user)
+  const uid = user ? user._id : null
   const [tuits, setTuits] = useState([]);
   const [tuit, setTuit] = useState('');
   const userId = uid;
-
-  const findTuits = () => {
+  const findTuits = useCallback( async () => {
     if(uid) {
-      service.findTuitByUser(uid)
+      await service.findTuitByUser(uid)
         .then(tuits => setTuits(tuits))
     } else {
-      service.findAllTuits()
+      await service.findAllTuits()
         .then(tuits => setTuits(tuits))
     }
-  }
+  }, [uid])
 
   useEffect(() => {
     findTuits()
   }, [])
 
-  const createTuit = () =>
-      service.createTuit(userId, {_tuit: tuit, _postedBy: userId})
-          .then(findTuits())
-
-  const deleteTuit = (tid) =>
-      service.deleteTuit(tid)
-          .then(findTuits())
-
+  const createTuit = async () => { 
+    await service.createTuit({_tuit: tuit, _postedBy: userId})
+    await findTuits()
+  }
+    
+  const deleteTuit = async (tid) => { 
+    await service.deleteTuit(tid)
+    await findTuits()
+  }
+    
   return(
     <div className="ttr-home">
       <div className="border border-bottom-0">

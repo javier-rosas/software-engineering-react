@@ -4,17 +4,22 @@ import * as service from "../../services/users-service";
 import {signup, login} from '../../services/auth-service'
 import React from "react";
 import {UserList} from "./user-list";
+import { useDispatch } from 'react-redux'
+import { signin } from "../../redux/userSlice";
 
 export const Login = () => {
   const [existingUsers, setExistingUsers] = useState([]);
   const [newUser, setNewUser] = useState({});
   const [loginUser, setLoginUser] = useState({});
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-  const deleteUser = (uid) =>
+  const deleteUser = (uid) => {
     service.deleteUser(uid)
       .then(findAllUsers)
-
+    
+  }
+    
   const findAllUsers = () =>
     service.findAllUsers()
       .then(users => {
@@ -23,11 +28,13 @@ export const Login = () => {
 
   const register = () =>
     signup(newUser)
+      .then((user) => dispatch(signin(user)))
       .then(() => navigate('/profile'))
       .catch(e => alert(e));
 
   const loginFunc = () =>
     login(loginUser)
+      .then((user) => dispatch(signin(user)))
       .then((user) => navigate('/profile/mytuits'))
       .catch(e => alert(e));
 

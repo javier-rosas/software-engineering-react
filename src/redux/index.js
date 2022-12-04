@@ -1,0 +1,10 @@
+/**
+ * @file combines reducers into one
+ */
+
+import { combineReducers } from 'redux'
+import userReducer from "./userSlice"
+
+export default combineReducers({
+  userReducer
+})

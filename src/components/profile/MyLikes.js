@@ -1,12 +1,21 @@
 import Tuits from "../tuits";
-import * as service from "../services/likes-service";
+import * as service from "../../services/likes-service";
 import {useEffect, useState} from "react";
+import { useSelector } from "react-redux"
 
 const MyLikes = () => {
-  const [likedTuits, setLikedTuis] = useState([]);
+  const [likedTuits, setLikedTuits] = useState([]);
+  const user = useSelector((state) => state.userReducer.user)
+
   const findTuitsILike = () =>
-    service.findAllTuitsLikedByUser("me")
-      .then((tuits) => setLikedTuis(tuits));
+    service.findAllTuitsLikedByUser(user._id)
+      .then((tuits) => {
+        console.log("user", user)
+        const actualTuits = tuits.map(tuit => tuit.tuit)
+        console.log("MyLikes", actualTuits)
+        setLikedTuits(actualTuits)
+      });
+
   useEffect(findTuitsILike, []);
   
   return(
@@ -16,4 +25,5 @@ const MyLikes = () => {
     </div>
   );
 };
+
 export default MyLikes;
