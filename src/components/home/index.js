@@ -13,18 +13,16 @@ const Home = () => {
 
   const findTuits = () => {
     if(uid) {
-      return service.findTuitByUser(uid)
+      service.findTuitByUser(uid)
         .then(tuits => setTuits(tuits))
     } else {
-      return service.findAllTuits()
+      service.findAllTuits()
         .then(tuits => setTuits(tuits))
     }
   }
 
   useEffect(() => {
-    let isMounted = true;
     findTuits()
-    return () => {isMounted = false;}
   }, [])
 
   const createTuit = () =>

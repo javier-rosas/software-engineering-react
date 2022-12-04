@@ -3,12 +3,11 @@ import './tuits.css';
 import Tuit from "./tuit";
 import * as likesService from "../../services/likes-service";
 
-function Tuits({tuits = [], deleteTuit, refreshTuits}) {
+function Tuits({tuits = [], deleteTuit}) {
 
   const likeTuit = (tuit) =>
     likesService
       .userTogglesTuitLikes("me", tuit._id)
-      .then(refreshTuits)
       .catch(e => alert(e))
 
 
