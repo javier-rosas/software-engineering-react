@@ -16,10 +16,12 @@ import {Login} from "../profile/login";
 import Movies from "../movies";
 import MovieDetails from "../movies/details";
 import MyTuits from "../profile/my-tuits";
+import MyLikes from "../profile/MyLikes";
+import MyDislikes from "../profile/MyDislikes";
 
 function Tuiter () {
   return(
-    <HashRouter>
+    <BrowserRouter>
       <div className="container">
         <div className="ttr-tuiter">
           <div className="ttr-left-column">
@@ -44,7 +46,9 @@ function Tuiter () {
               <Route path="/movies/:imdbID" element={<MovieDetails/>}/>
               <Route path="/more" element={<More/>}/>
               <Route path="/profile/mytuits" element={<MyTuits/>} />
-              {/** <Route path="/mylikes" element={<MyLikes/>}/>*/}
+              <Route path="/profile/mylikes" element={<MyLikes/>}/>
+              <Route path="/profile/mylikes" element={<MyLikes/>}/>
+              <Route path="/profile/dislikes" element={<MyDislikes/>}/>
             </Routes>
           </div>
           <div className="ttr-right-column">
@@ -52,7 +56,7 @@ function Tuiter () {
           </div>
         </div>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 export default Tuiter;

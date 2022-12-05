@@ -5,7 +5,7 @@
 // imports
 import {
   createUser,
-  deleteTuit, findAllUsers,
+  deleteUsersByUsername, findAllUsers,
   findUserById
 } from "../services/users-service";
 
@@ -23,13 +23,13 @@ describe('createUser', () => {
   // setup test before running test
   beforeAll(() => {
     // remove any/all users to make sure we create it in the test
-    return deleteTuit(ripley._username);
+    return deleteUsersByUsername(ripley._username);
   })
 
   // clean up after test runs
   afterAll(() => {
     // remove any data we created
-    return deleteTuit(ripley._username)
+    return deleteUsersByUsername(ripley._username)
   })
 
   test('can insert new users with REST API', async () => {

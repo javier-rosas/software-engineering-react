@@ -1,34 +1,61 @@
+/**
+ * @file implements tuit stats component
+ */
+
+
+/**
+ * imports
+ */
 import React from "react"
 import { useState, useEffect } from 'react'
 import { userTogglesTuitDislikes } from '../../services/dislikes-service'
 import { findUserDislikesTuit } from '../../services/dislikes-service'
 import { findUserLikesTuit } from '../../services/likes-service'
+import { useSelector } from "react-redux"
 
+/**
+ * 
+ * @param {tuit} tuit tuit object  
+ * @param likeTuit likeTuit function
+ * @returns JSX object
+ */
 const TuitStats = ({tuit, likeTuit}) => {
 
+  // state components
   const [isLiked, setIsLiked] = useState(false)
   const [isDisliked, setIsDisliked] = useState(false)
   const [localLikes, setLocalLikes] = useState(tuit?._stats?._likes ?? 0)
   const [localDislikes, setLocalDislikes] = useState(tuit?._stats?._dislikes ?? 0)
+  const userId = useSelector((state) => state.userReducer.user?._id)
 
+  /**
+   * 
+   * @param tuit tuit object 
+   * @returns status of request
+   */
   const dislikeTuit = (tuit) =>
-    userTogglesTuitDislikes("me", tuit._id)
+    userTogglesTuitDislikes(userId, tuit._id)
         .catch(e => console.log(e))
 
+  /**
+   * Load on first refresh. Sets the isLiked and isDisliked state variables, 
+   * which are meant for coloring css styles for the up and down icons
+   */
   useEffect( () => {
-    findUserLikesTuit("me", tuit._id)
+    findUserLikesTuit(userId, tuit._id)
       .then((doesUserLikeTuit) => {
         if (doesUserLikeTuit.data) setIsLiked(true)
       })
       .catch(e => console.log(e))
 
-    findUserDislikesTuit("me", tuit._id)
+    findUserDislikesTuit(userId, tuit._id)
       .then((doesUserDislikeTuit) => {
         if (doesUserDislikeTuit.data) setIsDisliked(true)
       })
       .catch(e => console.log(e))
   }, [])
 
+  // JSX
   return (
     <div className="row">
 
@@ -49,7 +76,14 @@ const TuitStats = ({tuit, likeTuit}) => {
             display: 'flex', 
             justifyContent: 'space-between'
           }}>
-
+          
+          {/**
+           * If the component is not liked, then show the icon with grey color, otherwise,
+           * show it with red color. 
+           * 
+           * The code below also sets functionality inside the onClicks, depending 
+           * on the state variable isLiked
+           */}
             { !isLiked ?  
 
               <i 
