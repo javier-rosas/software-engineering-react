@@ -191,7 +191,7 @@ describe('can retrieve all tuits with REST API', () => {
     // retrieve all the tuits
     const tuitsRetrieved = await findAllTuits();
     // there should be a minimum number of tuits
-    expect(tuitsRetrieved.length).toBeGreaterThanOrEqual(tuits.length);
+    expect(tuits.length).toBeGreaterThanOrEqual(tuitsRetrieved.length);
 
     // let's check each tuit we inserted
     const tuitsWeInserted = tuitsRetrieved.filter(
