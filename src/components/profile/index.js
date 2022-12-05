@@ -35,6 +35,10 @@ const Profile = () => {
       <Link to="/profile/mytuits">
         My Tuits
       </Link>
+      <br/>
+      <Link to="/profile/dislikes">
+        Dislikes
+      </Link>
       <h4>{profile._username}</h4>
       <h6>@{profile._username}</h6>
       <button onClick={logout}>

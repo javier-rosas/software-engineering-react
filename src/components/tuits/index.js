@@ -2,12 +2,13 @@ import React from "react";
 import './tuits.css';
 import Tuit from "./tuit";
 import * as likesService from "../../services/likes-service";
+import { useSelector } from "react-redux"
 
 function Tuits({tuits = [], deleteTuit}) {
-
+  const user = useSelector((state) => state.userReducer.user?._id)
   const likeTuit = (tuit) =>
     likesService
-      .userTogglesTuitLikes("me", tuit._id)
+      .userTogglesTuitLikes(user, tuit._id)
       .catch(e => alert(e))
 
 

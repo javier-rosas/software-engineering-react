@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { userTogglesTuitDislikes } from '../../services/dislikes-service'
 import { findUserDislikesTuit } from '../../services/dislikes-service'
 import { findUserLikesTuit } from '../../services/likes-service'
+import { useSelector } from "react-redux"
 
 const TuitStats = ({tuit, likeTuit}) => {
 
@@ -10,19 +11,19 @@ const TuitStats = ({tuit, likeTuit}) => {
   const [isDisliked, setIsDisliked] = useState(false)
   const [localLikes, setLocalLikes] = useState(tuit?._stats?._likes ?? 0)
   const [localDislikes, setLocalDislikes] = useState(tuit?._stats?._dislikes ?? 0)
-
+  const userId = useSelector((state) => state.userReducer.user?._id)
   const dislikeTuit = (tuit) =>
-    userTogglesTuitDislikes("me", tuit._id)
+    userTogglesTuitDislikes(userId, tuit._id)
         .catch(e => console.log(e))
 
   useEffect( () => {
-    findUserLikesTuit("me", tuit._id)
+    findUserLikesTuit(userId, tuit._id)
       .then((doesUserLikeTuit) => {
         if (doesUserLikeTuit.data) setIsLiked(true)
       })
       .catch(e => console.log(e))
 
-    findUserDislikesTuit("me", tuit._id)
+    findUserDislikesTuit(userId, tuit._id)
       .then((doesUserDislikeTuit) => {
         if (doesUserDislikeTuit.data) setIsDisliked(true)
       })

@@ -20,7 +20,6 @@
    reducers: {
     signin: (state, action) => {
       state.user = action.payload
-      console.log("userSlice", state.user)
     }
   },
  })
