@@ -1,3 +1,6 @@
+/**
+ * @file implements Tuits component
+ */
 import React from "react";
 import './tuits.css';
 import Tuit from "./tuit";
@@ -5,7 +8,15 @@ import * as likesService from "../../services/likes-service";
 import { useSelector } from "react-redux"
 
 function Tuits({tuits = [], deleteTuit}) {
+  /**
+   * State selector 
+   */
   const user = useSelector((state) => state.userReducer.user?._id)
+  /**
+   * 
+   * @param tuit tuit object 
+   * @returns status of request
+   */
   const likeTuit = (tuit) =>
     likesService
       .userTogglesTuitLikes(user, tuit._id)
@@ -15,6 +26,10 @@ function Tuits({tuits = [], deleteTuit}) {
     return (
     <div>
       <ul className="ttr-tuits list-group">
+        {/**
+         * Map over all the tuit objects and convert them to their corresponding JSX
+         * elements
+         */}
         {
           tuits.map && tuits.map(tuit => {
             return (
